@@ -32,7 +32,7 @@ public class EmployeeDAOTest {
 	@Autowired
 	private EmployeeDAO employeeDAO;
 
-	
+
 	@BeforeClass
 	public static void beforeClass() {
 		logger.info("Antes de todos los metodos");
@@ -49,16 +49,16 @@ public class EmployeeDAOTest {
 
 		try {
 			//
-			Employee emp = employeeDAO.findEmployee(100);
+			Employee emp = employeeDAO.findEmployee(1887);
 
 			Assert.assertNotNull(emp);
-
+/*
 			Assert.assertEquals("jgomez", emp.getLogin());
 			Assert.assertEquals("123456", emp.getPassword());
 			Assert.assertEquals("Jaime", emp.getFirstname());
 			Assert.assertEquals("Gomez", emp.getLastname());
 			Assert.assertEquals(2505, emp.getSalary());
-
+*/
 			logger.info(emp.toString());
 
 		} catch (EmptyResultException e) {
@@ -95,12 +95,12 @@ public class EmployeeDAOTest {
 		try {
 			//
 			Employee emp = employeeDAO.findEmployeeByLogin("jgomez");
-
+/*
 			Assert.assertEquals("123456", emp.getPassword());
 			Assert.assertEquals("Jaime", emp.getFirstname());
 			Assert.assertEquals("Gomez", emp.getLastname());
 			Assert.assertEquals(2505, emp.getSalary());
-
+*/
 			logger.info(emp.toString());
 			
 		} catch (EmptyResultException e) {
@@ -110,7 +110,7 @@ public class EmployeeDAOTest {
 		}
 
 	}
-
+/*
 	@Test
 	public void testCreateEmployee() {
 
@@ -145,22 +145,22 @@ public class EmployeeDAOTest {
 	}
 
 	
-	/*
+	
 	@Test
 	public void testUpdateEmployee() {
 
-		String LOGIN = "jgomez" + (int)(Math.random() * 100);
-		String PWD = "123";
-		String FIRSTNAME = "Jaime";
-		String LASTNAME = "Gomez";
-		int SALARY = 3000;
-		int DEPT_ID = 14;
+		String LOGIN = "Yefry" + (int)(Math.random() * 100);
+		String PWD = "Jeferson";
+		String FIRSTNAME = "Jeferson Fredy";
+		String LASTNAME = "Bujaico Rodriguez";
+		int SALARY = 4000;
+		int DEPT_ID = 10;
 		
-		String UP_PWD = "456";
-		String UP_FIRSTNAME = "Jaime5";
-		String UP_LASTNAME = "Gomez6";
-		int UP_SALARY = 3500;
-		int UP_DEPT_ID = 14;
+		String UP_PWD = "Fredy";
+		String UP_FIRSTNAME = "Jeferson Fredy";
+		String UP_LASTNAME = "Bujaico Rodriguez";
+		int UP_SALARY = 800;
+		int UP_DEPT_ID = 20;
 		
 		try {
 			//
@@ -170,6 +170,8 @@ public class EmployeeDAOTest {
 			//
 			Employee emp = employeeDAO.findEmployeeByLogin(LOGIN);
 
+			logger.info(emp.toString());
+			
 			Assert.assertEquals(UP_PWD, emp.getPassword());
 			Assert.assertEquals(UP_FIRSTNAME, emp.getFirstname());
 			Assert.assertEquals(UP_LASTNAME, emp.getLastname());
@@ -187,17 +189,19 @@ public class EmployeeDAOTest {
 	@Test
 	public void testDeleteEmployee() {
 
-		String LOGIN = "jromero";
-		String PWD = "123";
-		String FIRSTNAME = "Juan";
-		String LASTNAME = "Romero";
-		int SALARY = 3000;
-		int DEPT_ID = 14;
+		String LOGIN = "Yefry49";
+		String PWD = "Fredy";
+		String FIRSTNAME = "Jeferson Fredy";
+		String LASTNAME = "Bujaico Rodriguez";
+		int SALARY = 800;
+		int DEPT_ID = 20;
 
 		try {
 			//
-			employeeDAO.create(LOGIN, PWD, FIRSTNAME, LASTNAME, SALARY, DEPT_ID);
+			employeeDAO.delete(LOGIN);
 
+			logger.info("Eliminando el usuario:"+LOGIN);
+			
 		} catch (DAOException e) {
 			fail(e.getMessage());
 		}
