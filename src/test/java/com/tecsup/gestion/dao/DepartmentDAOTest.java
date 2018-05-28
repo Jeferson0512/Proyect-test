@@ -22,11 +22,11 @@ import com.tecsup.gestion.exception.DAOException;
 import com.tecsup.gestion.exception.EmptyResultException;
 import com.tecsup.gestion.model.Department;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml")
-@WebAppConfiguration
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml")
+//@WebAppConfiguration
 public class DepartmentDAOTest {
-
+/*
 	private static final Logger logger = LoggerFactory.getLogger(DepartmentDAOTest.class);
 	
 	@Autowired
@@ -59,7 +59,7 @@ public class DepartmentDAOTest {
 		}
 		
 	}
-	/*
+	
 	@Test
 	public void testFindDepartmentName() {
 		
@@ -133,7 +133,7 @@ public class DepartmentDAOTest {
 		}
 		
 	}
-	*/
+	
 	
 	@Test
 	public void testDeleteDepartment() {
@@ -152,6 +152,7 @@ public class DepartmentDAOTest {
 		
 	}
 	
+
 	@After
 	public void after() {
 		logger.info("Despues de cada metodo");
@@ -161,5 +162,5 @@ public class DepartmentDAOTest {
 	public static void afterClass() {
 		logger.info("Despues de todos los metodos");
 	}
-	
+	*/
 }
